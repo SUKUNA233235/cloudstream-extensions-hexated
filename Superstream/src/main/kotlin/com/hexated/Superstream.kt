@@ -367,7 +367,7 @@ open class Superstream : MainAPI() {
         val hideNsfw = if (settingsForProvider.enableAdult) 0 else 1
         val apiQuery =
             // Originally 8 pagelimit
-            """{"childmode":"$hideNsfw","app_version":"$appVersion","appid":"$appIdSecond","module":"Search4","channel":"Website","page":"1","lang":"en","type":"all","keyword":"$query","pagelimit":"20","expired_date":"${getExpiryDate()}","platform":"android"}"""
+            """{"childmode":"$hideNsfw","app_version":"$appVersion","appid":"$appIdSecond","module":"Search3","channel":"Website","page":"1","lang":"en","type":"all","keyword":"$query","pagelimit":"20","expired_date":"${getExpiryDate()}","platform":"android"}"""
         val searchResponse = queryApiParsed<MainData>(apiQuery, true).data.list.mapNotNull {
             it.toSearchResponse(this)
         }
